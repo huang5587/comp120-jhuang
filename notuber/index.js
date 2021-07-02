@@ -1,1 +1,102 @@
-let map;function initMap(){map=new google.maps.Map(document.getElementById("map"),{center:{lat:42.352271,lng:-71.055242},zoom:14});var o=[{position:new google.maps.LatLng(42.3453,-71.0464),id:"mXfkjrFw"},{position:new google.maps.LatLng(42.3662,-71.0621),id:"nZXB8ZHz"},{position:new google.maps.LatLng(42.3603,-71.0547),id:"Tkwu74WC"},{position:new google.maps.LatLng(42.3472,-71.0802),id:"5KWpnAJN"},{position:new google.maps.LatLng(42.3663,-71.0544),id:"uf5ZrXYw"},{position:new google.maps.LatLng(42.3542,-71.0704),id:"VMerzMH8"}];for(let n=0;n<o.length;n++){new google.maps.Marker({position:o[n].position,icon:"car.png",map:map})}}
+let map
+var myLat = 0
+var myLng = 0
+var icon = "car.png"
+var availableCars = {}
+var minDistance = Number.MAX_SAFE_INTEGER
+
+
+initMap = () => {
+  map = new google.maps.Map(document.getElementById("map"), {
+  center: { lat: 42.352271, lng: -71.05524200000001 },
+  zoom: 4,
+  })
+  getLocation()
+}
+
+getLocation = () => {
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){
+      myLat = position.coords.latitude
+      myLng = position.coords.longitude
+      getCars()
+    })
+  }
+}
+
+getCars = () => {
+  var me = new google.maps.LatLng(myLat, myLng)
+  var distance = {}
+  var closestCar = {}
+
+  request = new XMLHttpRequest();
+
+  request.open("POST",  "https://immense-woodland-80683.herokuapp.com/rides", true)
+
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+
+  request.onreadystatechange = () => {
+
+    if(request.readyState == 4){
+      availableCars = JSON.parse(request.responseText)
+      for (var i = 0; i < availableCars.length; i++) {
+
+        var nearbyCars = new google.maps.Marker({
+        position: new google.maps.LatLng(availableCars[i].lat, availableCars[i].lng),
+        icon: icon,
+        map: map,
+        })
+
+        //store distances in array
+        var carPosition = new google.maps.LatLng(availableCars[i].lat, availableCars[i].lng)
+        distance = google.maps.geometry.spherical.computeDistanceBetween(me,carPosition) * 0.00062137
+        if (distance < minDistance) {
+          minDistance = distance
+          closestCar = availableCars[i]
+        }
+      }
+
+      //polyline
+      var pathCoordinates = [
+        {lat: myLat, lng: myLng },
+        {lat: closestCar.lat, lng: closestCar.lng },
+        ]
+
+      var polyline = new google.maps.Polyline({
+        path: pathCoordinates,
+        geodesic: true,
+        strokeColor: "#FF0000",
+        strokeOpacity: 1.0,
+        strokeWeight: 5,
+      })
+
+      polyline.setMap(map)
+      renderMap(closestCar)
+    }
+  }
+    request.send("username=jLttbNzY&lat=" + myLat +"&lng="+ myLng)
+}
+
+
+renderMap = (closestCar) => {
+  var me = new google.maps.Marker({
+    position: {lat: myLat, lng: myLng},
+    map: map,
+  })
+
+  var infowindow = new google.maps.InfoWindow({
+    content: "closest car with username " + closestCar.username + " " + Math.round(minDistance) + " miles away",
+  })
+
+  me.addListener("click", () => {
+    infowindow.open({
+      anchor: me,
+      map: map,
+      shouldFocus: false,
+    })
+  })
+}
+
+
+
+
