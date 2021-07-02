@@ -31,6 +31,7 @@ getCars = () => {
 
   request = new XMLHttpRequest();
 
+
   request.open("POST",  "https://immense-woodland-80683.herokuapp.com/rides", true)
 
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
@@ -96,7 +97,3 @@ renderMap = (closestCar) => {
     })
   })
 }
-
-
-
-
