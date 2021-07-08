@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>    
+  	<link rel="stylesheet" href="style.css" type="text/css" />
+  	<meta charset="utf-8"/>
+    <title>Lab 13: Security</title>
+  </head>
+
+  <body>
+  	<h1>1. Introduction </h1> 
+  		<p> https://jordan-marsh.herokuapp.com is a web app that sends and recieves data related to a ride-sharing app not disimilar to uber. If given a vehicle or passenger username, the website will return its corresponding entry from its respective database. If the website is sent data of a specific vehicle or passenger, it will add that entry to its respective database . </p> <br>
+
+  	<h1>2. Methodology </h1>
+  		<p> In order to pen-test the website I primarily used curl to send payloads into the website. </p>
+  	<h1>3. Abstract of Findings </h1>
+  		<p> In my research I have found that malicious agents can exploit the website to 1. Access and manipulate the internal database and 2. Store code in the website to re-direct users to another URL. Manipulation of the database presents a concerning privacy issue as user records can be freely accessed. Redirecting off the web-site can be a security issue as users can be redirected to insecure and malicious websites that can further exploit the user.  </p>
+  	<h1>4. Issues Found </h1>
+  		<h2> Issue 1 </h2>
+  			<ul>
+  				<li>Issue: XSS </li>
+  				<li>Location / page:  </li>
+  				<li>Severity of issue </li>
+  				<li> Description of issue: </li>
+  				<li> Proof </li>
+  				<li> Resolution </li>
+			<ul>
+				<br>
+				<br>
+  	<h1>5. Conclusions </h1>
+  		<p> The primary cause for these vulnerabilities is due to unsanitized user input. An immediate recommendation is to prevent users from inputting punctuation when it is not necessary. This prevents the use of script tags and incomplete SQL commands as a means to exploit the website. </p>
+	
+  </body>
+</html>

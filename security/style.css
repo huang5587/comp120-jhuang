@@ -1,0 +1,23 @@
+body{
+	background-color: #F7CAC8;
+}
+
+h1{
+	font-size: 54px;
+	color: white;
+	font-family: sans-serif;
+	font-style: bold;
+	text-decoration: underline;
+	text-align: left;
+}
+
+h3{
+	font-size: 28px;
+	color: white;
+	font-family: sans-serif;
+	font-style: italic;
+}
+
+p{
+	text-align: left;
+}
