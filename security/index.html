@@ -13,21 +13,31 @@
   	<h1>2. Methodology </h1>
   		<p> In order to pen-test the website I primarily used curl to send payloads into the website. </p>
   	<h1>3. Abstract of Findings </h1>
-  		<p> In my research I have found that malicious agents can exploit the website to 1. Access and manipulate the internal database and 2. Store code in the website to re-direct users to another URL. Manipulation of the database presents a concerning privacy issue as user records can be freely accessed. Redirecting off the web-site can be a security issue as users can be redirected to insecure and malicious websites that can further exploit the user.  </p>
+  		<p> In my research I have found that malicious agents can abuse the website to insert potentially malicious code. This presents a major security threat as the ability to insert livecode to the website can affect all users of the website. Malicious agents could abuse this to send spyware, steal user data, or at best just inconvienice users of the website. This vulnerability leaves us at the mercy of the attacker. Furthermore, the design of the website, which allows users to recieve data by giving a username presents a privacy issue. Because there is no verification step to prove the identity of the user, individuals could access anyones location data with only their username.  </p>
   	<h1>4. Issues Found </h1>
-  		<h2> Issue 1 </h2>
+  		<h3> Issue 1 </h3>
   			<ul>
-  				<li>Issue: XSS </li>
-  				<li>Location / page:  </li>
-  				<li>Severity of issue </li>
-  				<li> Description of issue: </li>
-  				<li> Proof </li>
-  				<li> Resolution </li>
+  				<li>Issue: XSS, user input is reflected as live code on the website. </li>
+  				<li>Location / page: https://jordan-marsh.herokuapp.com/ </li>
+  				<li>Severity of issue: high</li>
+  				<li> Description of issue: I used <i> "curl --data "username=&ltscript&gtalert('malicious javascript code here')&lt/script&gts"&lat=42&lng=-71" https://jordan-marsh.herokuapp.com/rides </i>   </li>to insert javascript code into the passengers database. The website pulls straight from the database and displays the entries on the website. 
+  				<li> Proof: </li> <img src="xss.JPG" width="2000">
+  				<li> Resolution: This can be resolved by sanitizing user input. Specifically filtering out punctuation from the user input prevents code being sent to the database. For example before displaying the user input, the developer can replace all  < with "ampersand lt", which will continue to display punctuation but without executing the code.  </li>
 			<ul>
+
+        <h3> Issue 2 </h3>
+          <ul>
+            <li>Issue: Access to user data wihtout verification of identity </li>
+            <li>Location / page: https://jordan-marsh.herokuapp.com/passenger.json </li>
+            <li>Severity of issue: medium</li>
+            <li> Description of issue: Simply by reading the source code I was able to identify the ability to pull data from the database without verification. A dedicated individual could through brute force, send different usernames as a GET request and record their location data. What they do with that information is limitless. 
+            <li> Proof: </li> <img src="privacy.JPG" width="1600">
+            <li> Resolution: This can be resolved by requiring user verification before allowing users to pull data from the database. This could come in the form of a log-in system, which prevents accessing location data unless the username matches the login. </li>
+        <ul>
 				<br>
 				<br>
   	<h1>5. Conclusions </h1>
-  		<p> The primary cause for these vulnerabilities is due to unsanitized user input. An immediate recommendation is to prevent users from inputting punctuation when it is not necessary. This prevents the use of script tags and incomplete SQL commands as a means to exploit the website. </p>
+  		<p> The  cause for these security issue is due to unsanitized user input. An immediate recommendation is to prevent users from inputting punctuation when it is not necessary. This prevents the use of script tags and incomplete SQL commands as a means to exploit the website. In terms of privacy, the main cause is unthoughtful design. By creating some sort of verification system (possibly in the form of a log-in system) this issue can be fixed easily.  </p>
 	
   </body>
 </html>
