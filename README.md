@@ -1,6 +1,6 @@
 <h1>CS120 - Web Programming & Engineering Class Folder</h1>
 
-<h2>What is this purpose of this Git repository?<h2>
+<h2>What is this purpose of this Git repository?</h2>
 
 
   This Git repository holds the classwork for my web programming & engineering class. I have made this repositry public to demonstrate some the skills I have learned during this class. 
