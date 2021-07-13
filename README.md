@@ -1,4 +1,4 @@
-**CS120 - Web Programming & Engineering Class Folder**
+<h1>**CS120 - Web Programming & Engineering Class Folder**</h1>
 
 **What is this purpose of this Git repository?**
 
