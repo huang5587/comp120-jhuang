@@ -3,7 +3,7 @@
 <h2>What is this purpose of this Git repository?</h2>
 
 
-  This Git repository holds the classwork for my web programming & engineering class. I have made this repositry public to demonstrate some the skills I have learned during this class. 
+  This Git repository holds the classwork for my web programming & engineering class. I have made this repositry public to demonstrate some of the skills I have learned during this class. 
   
   
 <h2>What was your favorite lab or assignment and why?</h2>
