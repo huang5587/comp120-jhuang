@@ -14,11 +14,9 @@
 		<div id="lyrics"></div>
 
 		<script>
-			// Complete this section and create a CSS file named style.css
 			var lyrics = document.getElementById("lyrics")
 			var video = document.getElementById("butwehavethepower")
 			video.addEventListener("timeupdate", function() {
-				console.log("what am i doing")
 				if (video.currentTime < 5.5) {
 					lyrics.innerHTML = "<h3> (guitar solo) </h3>";
 				}
