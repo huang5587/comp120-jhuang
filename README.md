@@ -11,10 +11,7 @@
 
   Notuber and its server immense-woodland was my favorite assignment. In summary, the requirement for the assignment was to create a ride-sharing app (Notuber) that displays vehicles from a seperate server (immense-woodland). I particularly enjoyed this assignement as it was the most 'real-life' assignment we had; specifcations were deliberately vague 
 and I was exposed to frameworks and services that are commonly used in industry (heroku, Node.js).
-  
-  <h2>How much do you think you have grown from day 1 of this course to now?</h2>
 
-
-<h2>What was the most important thing that you learned in this course? Cite two examples as evidence.Now that you have finished the course, what topic would you like to delve deeper into? </h2>
+<h2>What was the most important thing that you learned in this course?  </h2>
 
 As a computer science student, one of my biggest gaps in knowledge was how to actually put a program on the internet. Sure I learned plenty about data structures and algorithms but it wasn't until I had finished this class that I actually understood how to get something from a local machine onto the internet. 
