@@ -23,3 +23,6 @@ Sending a HTTP post request with the appropriate vehicle data will add that vehi
 
 <h3> /vehicle.json and /passenger.json </h3>
 Sending a HTTP get request with an existing passenger of vehicle username will return all corresponding vehicle / passenger entries from their respective database tables. 
+
+<h2> Moving Forward </h2>
+At the moment management and access of the database is achieved solely through curl. Obvious improvements would be to create an interface to add and manage passenger and vehicle entries. Furthermore, this would likely warrant the creation of a user log-in system to prevent unwanted editing of the databases. 
