@@ -16,7 +16,7 @@ Other than to serve the aforementioned notuber, immense-woodland was made to dem
 The output of the web server depends on the path used and HTTP request. I used curl to send HTTP post requests to the web app.
 
 <h3> /rides path </h3>
-Sending a HTTP post request with the appropriate passenger data will return a list of vehicles in the vehicle database. 
+Sending a HTTP post request with the appropriate passenger data will return a list of vehicles from the vehicle database. Notuber uses this path to display vehicles on its map interface. 
 
 <h3> /vehicles path </h3> 
 Sending a HTTP post request with the appropriate vehicle data will add that vehicle to the vehicle database. 
