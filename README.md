@@ -8,9 +8,8 @@
   
 <h2>What was your favorite lab or assignment and why?</h2>
 
-
   Notuber and its server immense-woodland was my favorite assignment. In summary, the requirement for the assignment was to create a ride-sharing app (Notuber) that displays vehicles from a seperate server (immense-woodland). I particularly enjoyed this assignement as it was the most 'real-life' assignment we had; specifcations were deliberately vague 
-and I was exposed to frameworks and services that are commonly used in industry (heroku, Node.js).
+and I was exposed to frameworks and services that are commonly used in industry (heroku, Node.js). In the future, I intend to extend the functionalities of this skeleton ride-sharing app into something that looks less like a homework assignement and more like a functioning real-life ride-sharing app. 
 
 <h2>What was the most important thing that you learned in this course?  </h2>
 
