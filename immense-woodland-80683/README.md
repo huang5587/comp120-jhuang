@@ -7,13 +7,13 @@ Other than to serve the aforementioned notuber, immense-woodland was made to dem
    <li> Creating and deploying with Heroku </li>
    <li> Using Node.js with Express to create a webapp </li>
   <li> Understanding CORS </li>
-  <li> Creating and using postgresql database </li>
+  <li> Creating and using a postgresql database </li>
   <li> Cementing pre-existing knowledge of HTTP requests </li>
      
   </ul>
 
 <h2> Features & Usage </h2>
-The output of the web server depends on the path used and HTTP request. 
+The output of the web server depends on the path used and HTTP request. I used curl to send HTTP post requests to the web app.
 
 <h3> /rides path </h3>
 Sending a HTTP post request with the appropriate passenger data will return a list of vehicles in the vehicle database. 
@@ -21,3 +21,5 @@ Sending a HTTP post request with the appropriate passenger data will return a li
 <h3> /vehicles path </h3> 
 Sending a HTTP post request with the appropriate vehicle data will add that vehicle to the vehicle database. 
 
+<h3> /vehicle.json and /passenger.json </h3>
+Sending a HTTP get request with an existing passenger of vehicle username will return all corresponding vehicle / passenger entries from their respective database tables. 
