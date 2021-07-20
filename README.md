@@ -16,4 +16,4 @@ and I was exposed to frameworks and services that are commonly used in industry 
 As a computer science student, one of my biggest gaps in knowledge was how to actually put a program on the internet. Sure I learned plenty about data structures and algorithms but it wasn't until I had finished this class that I actually understood how to get something from a local machine onto the internet. 
 
 <h2> Acknowledgements </h2>
-I would like to thank my professor Ming Chow for his mentorship, without which this repositry would not exist. 
+I would like to thank my professor Ming Chow for his mentorship, without which this repository would not exist. 
