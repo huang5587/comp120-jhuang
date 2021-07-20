@@ -1,5 +1,4 @@
 // curl --data "username=JANET&lat=42.354951&lng=-71.0509" https://immense-woodland-80683.herokuapp.com/vehicles
-const cool = require('cool-ascii-faces');
 const express = require('express');
 const path = require('path');
 const validator = require('validator')
@@ -21,7 +20,6 @@ app.use(express.urlencoded({
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('pages/index'))
-app.get('/cool', (req, res) => res.send(cool()))
 
 app.post('/rides', (req, res) => {
 
