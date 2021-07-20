@@ -1,5 +1,5 @@
 <h1> immense-woodland-80683 </h1>
-immense-woodland-80683 is a heroku webapp that is used as a database by notuber (https://github.com/huang5587/comp120-jhuang/tree/master/notuber). immense-woodland uses a postgresql database to store data pertaining to passengers and vehicles. Notuber will access the vehicle database and display existing vehicles on its map interface. 
+immense-woodland-80683 is a heroku webapp that is used as a database by notuber (https://github.com/huang5587/comp120-jhuang/tree/master/notuber). immense-woodland uses a postgresql database to store data pertaining to passengers and vehicles. Notuber will access the vehicle database and display existing vehicles on its map interface. I want the reader to know that accessing the webapp on a web browser will not show anything meaningful. This webapp was created as a database server and has no client interface (yet). 
 
 <h2> Motivations </h2>
 Other than to serve the aforementioned notuber, immense-woodland was made to demonstrate familiarity with:
@@ -25,4 +25,4 @@ Sending a HTTP post request with the appropriate vehicle data will add that vehi
 Sending a HTTP get request with an existing passenger of vehicle username will return all corresponding vehicle / passenger entries from their respective database tables. 
 
 <h2> Moving Forward </h2>
-At the moment management and access of the database is achieved solely through curl. Obvious improvements would be to create an interface to add and manage passenger and vehicle entries. Furthermore, this would likely warrant the creation of a user log-in system to prevent unwanted editing of the databases. 
+At the moment management and access of the database is achieved solely through curl. Obvious improvements would be to create an interface to add and manage passenger and vehicle entries. Furthermore, this would likely warrant the creation of a user log-in system to prevent unwanted editing of the databases. Seeing that the webapp has no client interface on its main page, it would be an idea to move notuber onto the heroku server and create a more user-friendly interface for vehicle and passenger interaction. 
